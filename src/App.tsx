@@ -1,6 +1,9 @@
+import { PlayIcon } from "lucide-react";
 import "./App.css";
+import { Button } from "./components/Button";
 import { Container } from "./components/Container";
 import { Countdown } from "./components/Countdown";
+import { Cycles } from "./components/Cycles";
 import { Input } from "./components/Input";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
@@ -14,7 +17,7 @@ export function App() {
         <Countdown></Countdown>
         <form
           action=''
-          className='flex flex-col justify-center items-center gap-4 text-center'
+          className='flex flex-col justify-center items-center gap-10 text-center'
         >
           <div className='formRow flex flex-col gap-4'>
             <Input
@@ -22,7 +25,6 @@ export function App() {
               id='task'
               type='text'
               placeholder='Digite a sua task'
-              disabled
             />
           </div>
 
@@ -31,11 +33,10 @@ export function App() {
           </div>
 
           <div className='formRow flex flex-col gap-4'>
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0 0</p>
+            <Cycles type='long' />
           </div>
 
-          <button>Iniciar</button>
+          <Button buttonColor='pause' icon={<PlayIcon />}></Button>
         </form>
       </Container>
     </>
