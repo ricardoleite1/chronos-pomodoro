@@ -2,7 +2,7 @@ import { History, Settings, Sun, House } from "lucide-react";
 
 export function Menu() {
   return (
-    <nav className='flex items-center gap-6 mt-12'>
+    <nav className='flex items-center justify-center gap-6 mt-12'>
       <a href='#'>
         <House
           size={54}
