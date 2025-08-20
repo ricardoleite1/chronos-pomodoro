@@ -1,4 +1,4 @@
-import { PlayIcon } from "lucide-react";
+import { PlayCircleIcon } from "lucide-react";
 import "./App.css";
 import { Button } from "./components/Button";
 import { Container } from "./components/Container";
@@ -7,6 +7,7 @@ import { Cycles } from "./components/Cycles";
 import { Input } from "./components/Input";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
+import { Footer } from "./components/Footer";
 
 export function App() {
   return (
@@ -36,8 +37,10 @@ export function App() {
             <Cycles type='long' />
           </div>
 
-          <Button buttonColor='pause' icon={<PlayIcon />}></Button>
+          <Button buttonColor='start' icon={<PlayCircleIcon />}></Button>
         </form>
+
+        <Footer />
       </Container>
     </>
   );
