@@ -1,6 +1,11 @@
 import "./App.css";
-import { NotFound } from "./pages/NotFound";
+import { TaskContextProvider } from "./contexts/TaskContext/TaskContextProvider";
+import { Home } from "./pages/Home";
 
 export function App() {
-  return <NotFound />;
+  return (
+    <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
+  );
 }

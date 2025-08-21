@@ -19,7 +19,7 @@ export function Form() {
       </div>
 
       <div className='formRow flex flex-col gap-4'>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p>O próximo intervalo é teste</p>
       </div>
 
       <div className='formRow flex flex-col gap-4'>
