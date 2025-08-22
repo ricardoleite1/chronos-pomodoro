@@ -18,7 +18,6 @@ export function Form() {
 
   function handleStartNewTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("teste");
 
     if (taskNameInput.current === null) return;
 
@@ -75,9 +74,11 @@ export function Form() {
         <p>O próximo intervalo é teste</p>
       </div>
 
-      <div className='formRow flex flex-col gap-4'>
-        <Cycles type='long' />
-      </div>
+      {state.currentCycle != 0 && (
+        <div className='formRow flex flex-col gap-4'>
+          <Cycles />
+        </div>
+      )}
 
       <Button buttonColor='start' icon={<PlayCircleIcon />}></Button>
     </form>
