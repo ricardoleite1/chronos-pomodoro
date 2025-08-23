@@ -8,6 +8,7 @@ import { useTaskContext } from "../contexts/TaskContext/useTaskContext";
 import { TaskActionTypes } from "../contexts/TaskContext/taskAction";
 import { getNextCycle } from "../utils/getNextCycle";
 import { getNextCycleType } from "../utils/getNextCycleType";
+import { Tips } from "./Tips";
 
 export function Form() {
   const { state, dispatch } = useTaskContext();
@@ -66,7 +67,7 @@ export function Form() {
       </div>
 
       <div className='formRow flex flex-col gap-4'>
-        <p>O próximo intervalo é teste</p>
+        <Tips nextCycleType={nextCycleType} />
       </div>
 
       {state.currentCycle != 0 && (
