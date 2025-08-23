@@ -1,5 +1,4 @@
 import { useTaskContext } from "../contexts/TaskContext/useTaskContext";
-import type { TaskModel } from "../models/TaskModel";
 import { getNextCycle } from "../utils/getNextCycle";
 import { getNextCycleType } from "../utils/getNextCycleType";
 

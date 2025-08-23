@@ -1,4 +1,4 @@
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { Button } from "./Button";
 import { Cycles } from "./Cycles";
 import { Input } from "./Input";
@@ -54,6 +54,23 @@ export function Form() {
     });
   }
 
+  function handleInterruptTask() {
+    setState(prevState => {
+      return {
+        ...prevState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: prevState.tasks.map(task => {
+          if (task.id === prevState.activeTask?.id) {
+            return { ...task, interruptDate: Date.now() };
+          }
+          return task;
+        }),
+      };
+    });
+  }
+
   return (
     <form
       onSubmit={handleStartNewTask}
@@ -66,6 +83,7 @@ export function Form() {
           id='task'
           type='text'
           ref={taskNameInput}
+          disabled={!!state.activeTask}
           placeholder='Digite a sua task'
         />
       </div>
@@ -80,7 +98,26 @@ export function Form() {
         </div>
       )}
 
-      <Button buttonColor='start' icon={<PlayCircleIcon />}></Button>
+      {!state.activeTask ? (
+        <Button
+          aria-label='Iniciar nova tarefa'
+          title='Iniciar nova tarefa'
+          key='btn_submit'
+          type='submit'
+          buttonColor='start'
+          icon={<PlayCircleIcon />}
+        ></Button>
+      ) : (
+        <Button
+          aria-label='Interromper tarefa atual'
+          title='Interromper tarefa atual'
+          key='btn_interrupt'
+          type='button'
+          buttonColor='pause'
+          onClick={handleInterruptTask}
+          icon={<StopCircleIcon />}
+        ></Button>
+      )}
     </form>
   );
 }
