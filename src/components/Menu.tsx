@@ -1,6 +1,6 @@
 import { History, Settings, Sun, House, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { RouterLink } from "./RouterLink";
 
 type AvailableThemes = "dark" | "light";
 
@@ -38,24 +38,24 @@ export function Menu() {
 
   return (
     <nav className='flex items-center justify-center gap-6 mt-12'>
-      <Link to='/'>
+      <RouterLink href='/'>
         <House
           size={48}
           className='text-zinc-700 cursor-pointer hover:text-zinc-900 transition ease-in-out delay-50 bg-cyan-500 p-3 rounded-2xl'
         />
-      </Link>
-      <a href='#'>
+      </RouterLink>
+      <RouterLink href='/history'>
         <History
           size={48}
           className='text-zinc-700 cursor-pointer hover:text-zinc-900 transition ease-in-out delay-50 bg-cyan-500 p-3 rounded-2xl'
         />
-      </a>
-      <a href='#'>
+      </RouterLink>
+      <RouterLink href='/settings'>
         <Settings
           size={48}
           className='text-zinc-700 cursor-pointer hover:text-zinc-900 transition ease-in-out delay-50 bg-cyan-500 p-3 rounded-2xl'
         />
-      </a>
+      </RouterLink>
       <a href='#' onClick={toggleTheme}>
         {nextThemeIcon[theme]}
       </a>
