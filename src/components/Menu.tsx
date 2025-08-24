@@ -1,5 +1,6 @@
 import { History, Settings, Sun, House, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 type AvailableThemes = "dark" | "light";
 
@@ -37,12 +38,12 @@ export function Menu() {
 
   return (
     <nav className='flex items-center justify-center gap-6 mt-12'>
-      <a href='#'>
+      <Link to='/'>
         <House
           size={48}
           className='text-zinc-700 cursor-pointer hover:text-zinc-900 transition ease-in-out delay-50 bg-cyan-500 p-3 rounded-2xl'
         />
-      </a>
+      </Link>
       <a href='#'>
         <History
           size={48}
