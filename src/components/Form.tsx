@@ -16,6 +16,7 @@ export function Form() {
   const taskNameInput = useRef<HTMLInputElement>(null);
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name;
 
   function handleStartNewTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -68,6 +69,7 @@ export function Form() {
           ref={taskNameInput}
           disabled={!!state.activeTask}
           placeholder='Digite a sua task'
+          defaultValue={lastTaskName}
         />
       </div>
 
