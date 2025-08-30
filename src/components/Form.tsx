@@ -20,6 +20,7 @@ export function Form() {
 
   function handleStartNewTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    showAlert.dismiss();
 
     if (taskNameInput.current === null) return;
 

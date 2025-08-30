@@ -73,9 +73,7 @@ export function taskReducer(
       return {
         ...state,
         config: {
-          longBreakTime: action.payload.longBreakTime,
-          shortBreakTime: action.payload.shortBreakTime,
-          workTime: action.payload.workTime,
+          ...action.payload,
         },
       };
     }

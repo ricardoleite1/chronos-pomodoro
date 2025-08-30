@@ -1,4 +1,5 @@
 import type { TaskModel } from "../../models/TaskModel";
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export enum TaskActionTypes {
   START_TASK = "START_TASK",
@@ -29,9 +30,5 @@ export type TaskActionModel =
     }
   | {
       type: TaskActionTypes.CHANGE_SETTINGS;
-      payload: {
-        shortBreakTime: number;
-        longBreakTime: number;
-        workTime: number;
-      };
+      payload: TaskStateModel["config"];
     };
