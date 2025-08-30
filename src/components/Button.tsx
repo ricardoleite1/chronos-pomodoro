@@ -12,7 +12,7 @@ export function Button({ buttonColor, icon, ...props }: ButtonProps) {
   return (
     <>
       <button
-        className={`border-none ${color[buttonColor]} text-white flex items-center justify-center min-w-60 p-3 rounded-md cursor-pointer hover:brightness-80 transition ease-in-out delay-50`}
+        className={`border-none ${color[buttonColor]} text-zinc-900 flex items-center justify-center min-w-auto p-3 rounded-md cursor-pointer hover:brightness-80 transition ease-in-out delay-50`}
         {...props}
       >
         {icon}

@@ -3,5 +3,9 @@ type HeadingProps = {
 };
 
 export function Heading({ children }: HeadingProps) {
-  return <h1 className='text-5xl font-bold flex gap-2'>{children}</h1>;
+  return (
+    <h1 className='flex items-center justify-center text-center text-2xl font-bold gap-4 mt-2'>
+      {children}
+    </h1>
+  );
 }
